@@ -11,8 +11,8 @@ router/
   │── src/ # Verilog source files
   │ ├── from_local.v # Handles packets injected from local core
   │ ├── forward_west.v # Handles packets arriving from the west neighbor
-  │ ├── forward_north.v # Handles packets arriving from the south neighbor
-  │ └── router_partial.v # Top-level integration of submodules (WIP)
+  │ └── forward_north.v # Handles packets arriving from the south neighbor
+
 
   │── tb/ # Testbenches
   │ ├── tb_from_local.v
@@ -59,11 +59,6 @@ To communicate spikes between cores, we use a **packet-based router network (NoC
 - If `dy == 0`, passes packet to local core.  
 - Error if `dy < 0` (invalid for north input).
 
-### `router_partial.v` (Work in Progress)
-- Top-level integration of `from_local`, `forward_west`, and `forward_north`.  
-- Will later be extended with `forward_east` and `forward_south` modules from teammate.  
-- Future work: add arbiters to handle multiple packets contending for the same output.
-
 ---
 
 ## 🧪 Testbenches
@@ -88,6 +83,7 @@ Testbenches demonstrate:
 3. Run simulation (example with Icarus Verilog):
         `iverilog -o tb tb/tb_forward_west.v src/forward_west.v`
         `vvp tb `
+
 
 
 
