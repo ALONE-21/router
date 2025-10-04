@@ -7,23 +7,23 @@ The router is responsible for moving spike packets between neuron cores in a mes
 
 ## 📂 Repository Structure
 router/
-``` bash
-│── src/ # Verilog source files
-│ ├── from_local.v # Handles packets injected from local core
-│ ├── forward_west.v # Handles packets arriving from the west neighbor
-│ ├── forward_north.v # Handles packets arriving from the south neighbor
-│ └── router_partial.v # Top-level integration of submodules (WIP)
+```bash
+  │── src/ # Verilog source files
+  │ ├── from_local.v # Handles packets injected from local core
+  │ ├── forward_west.v # Handles packets arriving from the west neighbor
+  │ ├── forward_north.v # Handles packets arriving from the south neighbor
+  │ └── router_partial.v # Top-level integration of submodules (WIP)
 
-│── tb/ # Testbenches
-│ ├── tb_from_local.v
-│ ├── tb_forward_west.v
-│ └── tb_forward_north.v
+  │── tb/ # Testbenches
+  │ ├── tb_from_local.v
+  │ ├── tb_forward_west.v
+  │ └── tb_forward_north.v
 
-│── docs/ # Design notes and diagrams (optional)
-│ └── design_notes.md
+  │── docs/ # Design notes and diagrams (optional)
+  │ └── design_notes.md
 
-│── README.md # Project documentation
-│── .gitignore # Ignore Vivado build files
+  │── README.md # Project documentation
+  │── .gitignore # Ignore Vivado build files
 ```
 ---
 
@@ -88,6 +88,7 @@ Testbenches demonstrate:
 3. Run simulation (example with Icarus Verilog):
         `iverilog -o tb tb/tb_forward_west.v src/forward_west.v`
         `vvp tb `
+
 
 
 
