@@ -8,7 +8,7 @@ The router is responsible for moving spike packets between neuron cores in a mes
 ## 📂 Repository Structure
 router/
 
-`│── src/ # Verilog source files`
+`│── src/ # Verilog source files` //
 `│ ├── from_local.v # Handles packets injected from local core`
 `│ ├── forward_west.v # Handles packets arriving from the west neighbor`
 `│ ├── forward_north.v # Handles packets arriving from the south neighbor`
@@ -88,6 +88,7 @@ Testbenches demonstrate:
 3. Run simulation (example with Icarus Verilog):
         `iverilog -o tb tb/tb_forward_west.v src/forward_west.v`
         `vvp tb `
+
 
 
 
